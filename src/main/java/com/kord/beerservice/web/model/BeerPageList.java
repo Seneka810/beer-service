@@ -1,2 +1,4 @@
-package com.kord.beerservice.web.model;public class BeerPageList {
+package com.kord.beerservice.web.model;
+
+public class BeerPageList {
 }

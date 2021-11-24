@@ -1,4 +1,4 @@
-package com.kord.beerservice.web.entity;
+package com.kord.beerservice.entity;
 
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
@@ -33,7 +33,7 @@ public class Beer {
 
     @UpdateTimestamp
     private Timestamp lastModifyDate;
-    private String beerNAme;
+    private String beerName;
     private String beerStyle;
 
     @Column(unique = true)
