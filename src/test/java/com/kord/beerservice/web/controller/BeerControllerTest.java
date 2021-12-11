@@ -1,9 +1,10 @@
 package com.kord.beerservice.web.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.kord.beerservice.bootstrap.BeerLoader;
+import com.kord.beerservice.service.BeerService;
 import com.kord.beerservice.web.model.BeerDto;
 import com.kord.beerservice.web.model.BeerStyle;
-import com.kord.beerservice.web.service.BeerService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,7 +50,6 @@ class BeerControllerTest {
 
     @Test
     void getBeerById() throws Exception {
-//        given(beerRepository.findById(any())).willReturn(Optional.of(Beer.builder().build()));
         given(beerService.getById(any())).willReturn(BeerDto.builder().build());
 
         mockMvc.perform(get("/api/v1/beer/{beerId}", UUID.randomUUID().toString())
@@ -117,7 +117,7 @@ class BeerControllerTest {
                 .beerName("My Beer")
                 .beerStyle(BeerStyle.ALE)
                 .price(new BigDecimal("2.99"))
-                .upc(123123123123L)
+                .upc(BeerLoader.BEER_1_UPC)
                 .build();
     }
 

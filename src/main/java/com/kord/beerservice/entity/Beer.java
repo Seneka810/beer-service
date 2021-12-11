@@ -33,11 +33,13 @@ public class Beer {
 
     @UpdateTimestamp
     private Timestamp lastModifyDate;
+
     private String beerName;
     private String beerStyle;
 
     @Column(unique = true)
-    private Long upc;
+    private String upc;
+
     private BigDecimal price;
     private Integer minOnHand;
     private Integer quantityToBrew;

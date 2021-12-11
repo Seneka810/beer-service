@@ -1,4 +1,4 @@
-package com.kord.beerservice.web.service;
+package com.kord.beerservice.service;
 
 import com.kord.beerservice.web.model.BeerDto;
 
@@ -10,5 +10,4 @@ public interface BeerService {
     BeerDto saveNewBeer(BeerDto beerDto);
 
     BeerDto updateBeer(UUID beerId, BeerDto beerDto);
-
 }
