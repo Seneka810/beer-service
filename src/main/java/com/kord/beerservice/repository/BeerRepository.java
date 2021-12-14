@@ -1,6 +1,6 @@
 package com.kord.beerservice.repository;
 
-import com.kord.beerservice.entity.Beer;
+import com.kord.beerservice.domain.Beer;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.UUID;

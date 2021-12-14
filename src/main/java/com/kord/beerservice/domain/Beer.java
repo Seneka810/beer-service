@@ -1,4 +1,4 @@
-package com.kord.beerservice.entity;
+package com.kord.beerservice.domain;
 
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;

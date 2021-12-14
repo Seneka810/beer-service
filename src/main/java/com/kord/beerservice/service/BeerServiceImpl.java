@@ -1,6 +1,6 @@
 package com.kord.beerservice.service;
 
-import com.kord.beerservice.entity.Beer;
+import com.kord.beerservice.domain.Beer;
 import com.kord.beerservice.repository.BeerRepository;
 import com.kord.beerservice.web.controller.NotFoundException;
 import com.kord.beerservice.web.mappers.BeerMapper;

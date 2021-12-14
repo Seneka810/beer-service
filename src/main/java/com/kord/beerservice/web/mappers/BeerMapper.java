@@ -1,6 +1,6 @@
 package com.kord.beerservice.web.mappers;
 
-import com.kord.beerservice.entity.Beer;
+import com.kord.beerservice.domain.Beer;
 import com.kord.beerservice.web.model.BeerDto;
 import org.mapstruct.Mapper;
 

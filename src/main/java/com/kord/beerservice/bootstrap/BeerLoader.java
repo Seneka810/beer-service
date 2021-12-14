@@ -1,6 +1,6 @@
 package com.kord.beerservice.bootstrap;
 
-import com.kord.beerservice.entity.Beer;
+import com.kord.beerservice.domain.Beer;
 import com.kord.beerservice.repository.BeerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
