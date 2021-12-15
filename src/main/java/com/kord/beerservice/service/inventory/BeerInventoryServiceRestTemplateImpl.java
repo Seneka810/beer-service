@@ -2,7 +2,6 @@ package com.kord.beerservice.service.inventory;
 
 import com.kord.beerservice.service.inventory.model.BeerInventoryDto;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.core.ParameterizedTypeReference;
@@ -33,7 +32,7 @@ public class BeerInventoryServiceRestTemplateImpl implements BeerInventoryServic
     }
 
     @Override
-    public Integer getOnHandInventory(UUID beerId) {
+    public Integer getOnhandInventory(UUID beerId) {
 
         log.debug("Calling Inventory Service");
 
