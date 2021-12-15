@@ -8,6 +8,7 @@ import com.kord.beerservice.web.model.BeerDto;
 import com.kord.beerservice.web.model.BeerPagedList;
 import com.kord.beerservice.web.model.BeerStyle;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
@@ -27,9 +28,11 @@ public class BeerServiceImpl implements BeerService {
         this.mapper = mapper;
     }
 
+    @Cacheable(cacheNames = "beerCache", key = "#beerId", condition = "#showInventoryOnHand == false")
     @Override
     public BeerDto getById(UUID beerId, Boolean showInventoryOnHand) {
-        if(showInventoryOnHand) {
+
+        if(Boolean.TRUE.equals(showInventoryOnHand)) {
             return mapper.beerToBeerDtoWithInventory(repository.findById(beerId).orElseThrow(NotFoundException::new));
         } else {
             return mapper.beerToBeerDto(repository.findById(beerId).orElseThrow(NotFoundException::new));
@@ -53,8 +56,10 @@ public class BeerServiceImpl implements BeerService {
         return mapper.beerToBeerDto(repository.save(beer));
     }
 
+    @Cacheable(cacheNames = "beerListCache", condition = "#showInventoryOnHand == false")
     @Override
     public BeerPagedList listBeers(Integer beerName, BeerStyle beerStyle, PageRequest pageRequest, Boolean showInventoryOnHand) {
+
         BeerPagedList beerPagedList;
         Page<Beer> beerPage;
 
@@ -96,5 +101,11 @@ public class BeerServiceImpl implements BeerService {
         }
 
         return beerPagedList;
+    }
+
+    @Cacheable(cacheNames = "beerUpcCache")
+    @Override
+    public BeerDto getByUpc(String upc) {
+        return mapper.beerToBeerDto(repository.findByUpc(upc));
     }
 }
