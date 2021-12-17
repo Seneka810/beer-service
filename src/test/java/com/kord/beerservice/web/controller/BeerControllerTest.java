@@ -3,6 +3,7 @@ package com.kord.beerservice.web.controller;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.kord.beerservice.bootstrap.BeerLoader;
 import com.kord.beerservice.service.BeerService;
+import com.kord.beerservice.service.inventory.BeerInventoryService;
 import com.kord.beerservice.web.model.BeerDto;
 import com.kord.beerservice.web.model.BeerStyle;
 import org.junit.jupiter.api.Test;
@@ -48,6 +49,9 @@ class BeerControllerTest {
 
     @MockBean
     BeerService beerService;
+
+    @MockBean
+    BeerInventoryService beerInventoryService;
 
     @Test
     void getBeerById() throws Exception {
