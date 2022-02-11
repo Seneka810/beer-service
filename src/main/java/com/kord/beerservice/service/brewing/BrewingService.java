@@ -1,4 +1,4 @@
-package com.kord.beerservice.service;
+package com.kord.beerservice.service.brewing;
 
 import com.kord.beerservice.config.JmsConfig;
 import com.kord.beerservice.domain.Beer;
@@ -39,3 +39,4 @@ public class BrewingService {
         });
     }
 }
+
