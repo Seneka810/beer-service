@@ -1,4 +1,4 @@
-package guru.kord.beerservice.web.model;
+package guru.sfg.brewery.model;
 
 public enum BeerStyle {
     LAGER, PILSNER, STOUT, GOSE, PORTER, ALE, WHEAT, IPA, PALE_ALE, SAISON;

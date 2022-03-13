@@ -1,8 +1,8 @@
 package guru.kord.beerservice.service;
 
-import guru.kord.beerservice.web.model.BeerDto;
-import guru.kord.beerservice.web.model.BeerPagedList;
-import guru.kord.beerservice.web.model.BeerStyle;
+import guru.sfg.brewery.model.BeerDto;
+import guru.sfg.brewery.model.BeerPagedList;
+import guru.sfg.brewery.model.BeerStyle;
 import org.springframework.data.domain.PageRequest;
 
 import java.util.UUID;

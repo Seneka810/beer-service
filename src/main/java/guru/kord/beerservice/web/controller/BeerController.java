@@ -1,9 +1,9 @@
 package guru.kord.beerservice.web.controller;
 
 import guru.kord.beerservice.service.BeerService;
-import guru.kord.beerservice.web.model.BeerDto;
-import guru.kord.beerservice.web.model.BeerPagedList;
-import guru.kord.beerservice.web.model.BeerStyle;
+import guru.sfg.brewery.model.BeerDto;
+import guru.sfg.brewery.model.BeerPagedList;
+import guru.sfg.brewery.model.BeerStyle;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.http.HttpStatus;

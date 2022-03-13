@@ -2,7 +2,7 @@ package guru.kord.beerservice.web.mappers;
 
 import guru.kord.beerservice.domain.Beer;
 import guru.kord.beerservice.service.inventory.BeerInventoryService;
-import guru.kord.beerservice.web.model.BeerDto;
+import guru.sfg.brewery.model.BeerDto;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public abstract class BeerMapperDecorator implements BeerMapper {

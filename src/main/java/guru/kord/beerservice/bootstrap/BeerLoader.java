@@ -2,7 +2,7 @@ package guru.kord.beerservice.bootstrap;
 
 import guru.kord.beerservice.domain.Beer;
 import guru.kord.beerservice.repository.BeerRepository;
-import guru.kord.beerservice.web.model.BeerStyle;
+import guru.sfg.brewery.model.BeerStyle;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;

@@ -2,7 +2,7 @@ package guru.kord.beerservice.service.brewing;
 
 import guru.kord.beerservice.config.JmsConfig;
 import guru.kord.beerservice.domain.Beer;
-import guru.sfg.common.events.BrewBeerEvent;
+import guru.sfg.brewery.model.events.BrewBeerEvent;
 import guru.kord.beerservice.repository.BeerRepository;
 import guru.kord.beerservice.service.inventory.BeerInventoryService;
 import guru.kord.beerservice.web.mappers.BeerMapper;

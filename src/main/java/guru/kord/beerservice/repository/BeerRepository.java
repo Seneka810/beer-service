@@ -1,7 +1,7 @@
 package guru.kord.beerservice.repository;
 
 import guru.kord.beerservice.domain.Beer;
-import guru.kord.beerservice.web.model.BeerStyle;
+import guru.sfg.brewery.model.BeerStyle;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.jpa.repository.JpaRepository;
