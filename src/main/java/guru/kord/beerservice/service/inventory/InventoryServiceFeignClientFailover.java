@@ -12,6 +12,7 @@ import java.util.UUID;
 @Component
 public class InventoryServiceFeignClientFailover implements InventoryServiceFeignClient {
 
+
     private final InventoryFailoverFeignClient failoverFeignClient;
     @Override
     public ResponseEntity<List<BeerInventoryDto>> getOnhandInventory(UUID beerId) {
