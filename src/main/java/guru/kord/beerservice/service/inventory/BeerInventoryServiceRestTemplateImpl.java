@@ -2,6 +2,7 @@ package guru.kord.beerservice.service.inventory;
 
 import guru.kord.beerservice.service.inventory.model.BeerInventoryDto;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Profile;
@@ -17,11 +18,17 @@ import java.util.UUID;
 
 @Profile("!local-discovery")
 @Slf4j
-@ConfigurationProperties(prefix = "brewery", ignoreUnknownFields = false)
+@ConfigurationProperties(prefix = "brewery", ignoreUnknownFields = true)
 @Component
 public class BeerInventoryServiceRestTemplateImpl implements BeerInventoryService {
     public static final String INVENTORY_PATH = "/api/v1/beer/{beerId}/inventory";
     private final RestTemplate restTemplate;
+
+    @Value("${brewery.inventory-user}")
+    private String inventoryUser;
+
+    @Value("${brewery.inventory-password}")
+    private String inventoryPassword;
 
     private String beerInventoryServiceHost;
 
@@ -30,7 +37,9 @@ public class BeerInventoryServiceRestTemplateImpl implements BeerInventoryServic
     }
 
     public BeerInventoryServiceRestTemplateImpl(RestTemplateBuilder restTemplateBuilder) {
-        this.restTemplate = restTemplateBuilder.build();
+        this.restTemplate = restTemplateBuilder
+                .basicAuthentication(inventoryUser, inventoryPassword)
+                .build();
     }
 
     @Override
